@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Vineet Pratap Singh's professional portfolio showcasing pharmacy, software development, ethical hacking, and digital forensics expertise. ORCID: 0009-0006-8424-0643">
+    <meta name="keywords" content="pharmacy, software development, ethical hacking, digital forensics, healthcare technology, pharmaceutical informatics">
+    <meta name="author" content="Vineet Pratap Singh">
+    <title>Vineet Pratap Singh</title>
+    <link rel="icon" type="image/png" href="https://i.ibb.co/W4V5dq9V/favicon.png">
+    <meta name="theme-color" content="#FFFFFF">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* ===== RESET & BASE STYLES ===== */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Noto Sans', sans-serif; 
+            line-height: 1.7; 
+            color: #333333; 
+            background: #FFFFFF; 
+            overflow-x: hidden;
+        }
+        :where(.hero, .navbar, footer) { cursor: default; }
+        
+        /* ===== TYPOGRAPHY & LAYOUT ===== */
+        h1 { font-size: 2.5rem; font-weight: 700; }
+        h2 { 
+            text-align: center; 
+            margin-bottom: 2rem; 
+            font-weight: 700; 
+            font-size: 2.2rem; 
+            position: relative; 
+        }
+        h2::after { 
+            content: ''; 
+            display: block; 
+            width: 80px; 
+            height: 3px; 
+            background: #8B0000; 
+            margin: 1rem auto 0; 
+            border-radius: 2px; 
+        }
+        h3 { color: #003087; font-weight: 700; font-size: 1.2rem; margin-bottom: 1rem; }
+        p { color: #555555; line-height: 1.8; }
+        a { text-decoration: none; transition: color 0.3s ease; }
+        
+        /* ===== PROFESSIONAL COLOR SYSTEM ===== */
+        h2.quote:nth-of-type(1), h2.quote:nth-of-type(3), h2.quote:nth-of-type(5), h2.quote:nth-of-type(7), h2.quote:nth-of-type(9) { color: #003087; }
+        h2.quote:nth-of-type(2), h2.quote:nth-of-type(4), h2.quote:nth-of-type(6), h2.quote:nth-of-type(8), h2.quote:nth-of-type(10) { color: #8B0000; }
+        .hero h2.quote { color: #FFFFFF; }
+        
+        /* ===== ANIMATION SYSTEM ===== */
+        @keyframes fadeInUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        @keyframes fadeInModal {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        .animate { animation: fadeInUp 0.6s ease forwards; }
+        .pulse-hero { animation: pulse 2s ease-in-out infinite; }
+        .highlight-hover { transition: all 0.3s ease; }
+        .highlight-hover:hover { box-shadow: 0 0 20px rgba(139, 0, 0, 0.3); transform: scale(1.02); }
+
+        /* ===== PROFESSIONAL TYPEWRITER ===== */
+        .typewriter {
+            border-right: 2px solid #FFFFFF;
+            color: #FFFFFF;
+            animation: blink 1s infinite;
+        }
+        .hero h2 .typewriter { color: #FFFFFF !important; }
+        @keyframes blink {
+            0%, 50% { border-color: #FFFFFF; }
+            51%, 100% { border-color: transparent; }
+        }
+
+        /* ===== NAVIGATION - PERFECT SPACING ===== */
+        .navbar { 
+            background: #003087; 
+            color: #FFFFFF; 
+            position: fixed; 
+            width: 100%; 
+            top: 0; 
+            z-index: 999; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.15); 
+        }
+        .nav-container { 
+            max-width: 1400px; 
+            margin: 0 auto; 
+            padding: 0.5rem 2rem; 
+            display: flex; 
+            align-items: center; 
+            gap: 3rem; /* Perfect logo-to-menu spacing */
+        }
+        .logo { 
+            font-size: 1.6rem; 
+            font-weight: 700; 
+            letter-spacing: 0.5px; 
+            transition: transform 0.3s ease, color 0.3s ease; 
+            white-space: nowrap; 
+            flex-shrink: 0;
+        }
+        .logo:hover { transform: scale(1.05); color: #8B0000; }
+        .logo-full { display: block; }
+        .logo-short { display: none; }
+        
+        .nav-menu { 
+            display: flex; 
+            list-style: none; 
+            gap: 0.4rem; /* Ultra-tight professional spacing */
+            margin-left: auto;
+            flex: 1;
+            justify-content: flex-end;
+        }
+        .nav-menu a { 
+            color: #FFFFFF; 
+            text-decoration: none; 
+            font-size: 0.9rem; 
+            font-weight: 500;
+            transition: all 0.3s ease; 
+            padding: 0.6rem 1.1rem; 
+            border-radius: 20px; 
+            white-space: nowrap;
+        }
+        .hamburger { 
+            display: none; 
+            flex-direction: column; 
+            cursor: pointer; 
+            margin-left: auto;
+        }
+        .hamburger span { 
+            width: 30px; 
+            height: 4px; 
+            background: #FFFFFF; 
+            margin: 3px 0; 
+            transition: all 0.3s ease; 
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero { 
+            background: #8B0000; 
+            color: #FFFFFF; 
+            padding: 140px 2rem 60px; 
+            text-align: center; 
+            position: relative; 
+            overflow: hidden; 
+        }
+        .hero h2.quote { color: #FFFFFF; }
+        .hero::before { 
+            content: ''; 
+            position: absolute; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%; 
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="%23FFFFFF" opacity="0.05"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>'); 
+            pointer-events: none; 
+        }
+        .hero-content { 
+            position: relative; 
+            z-index: 1; 
+            max-width: 1400px; 
+            margin: 0 auto; 
+        }
+        .profile-img { 
+            width: 480px; 
+            height: 360px; 
+            border-radius: 10px; 
+            border: 6px solid #FFF8E7; 
+            margin-bottom: 1.5rem; 
+            object-fit: cover; 
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3); 
+            transition: transform 0.3s ease; 
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        .profile-img.animate { animation: fadeInUp 1s ease forwards 0.5s; }
+        .profile-img:hover { transform: scale(1.02); }
+        .hero h2 { 
+            font-size: 2.8rem; 
+            margin-bottom: 1rem; 
+            color: #FFFFFF; 
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        .hero h2.animate { animation: fadeInUp 0.8s ease forwards; }
+        .hero p { 
+            font-size: 1.3rem; 
+            margin-bottom: 2rem; 
+            color: #FFF8E7; 
+            opacity: 0;
+            transform: translateY(30px);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .hero p.animate { animation: fadeInUp 0.6s ease forwards 0.3s; }
+        .btn-blue { 
+            background: #003087; 
+            color: #FFFFFF; 
+            padding: 0.9rem 2rem; 
+            text-decoration: none; 
+            border-radius: 6px; 
+            font-weight: 700; 
+            display: inline-block; 
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2); 
+            transition: all 0.3s ease;
+        }
+        .btn-blue:hover { 
+            background: #E0E7FF; 
+            color: #003087; 
+            transform: scale(1.05) translateY(-2px); 
+            box-shadow: 0 6px 12px rgba(0,0,0,0.3); 
+        }
+        .btn-red { 
+            background: #8B0000; 
+            color: #FFFFFF; 
+            padding: 0.9rem 2rem; 
+            text-decoration: none; 
+            border-radius: 6px; 
+            font-weight: 700; 
+            display: inline-block; 
+            margin: 0.5rem; 
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2); 
+            transition: all 0.3s ease;
+        }
+        .btn-red:hover { 
+            background: #FFF8E7; 
+            color: #8B0000; 
+            transform: scale(1.05) translateY(-2px); 
+            box-shadow: 0 6px 12px rgba(0,0,0,0.3); 
+        }
+
+        /* ===== SECTIONS ===== */
+        section { 
+            padding: 4rem 2rem; 
+            max-width: 1400px; 
+            margin: 0 auto; 
+            background: #F5F6F5; 
+        }
+
+        /* ===== ABOUT SECTIONS ===== */
+        .about-section { text-align: center; }
+        .about-section .summary { 
+            max-width: 800px; 
+            margin: 0 auto 2rem; 
+            font-size: 1.1rem; 
+            color: #555555; 
+            line-height: 1.8; 
+        }
+        .about-section .highlights { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 2rem; 
+            margin-top: 2rem; 
+        }
+        .highlight-item { 
+            background: #FFFFFF; 
+            padding: 2rem; 
+            border-radius: 12px; 
+            border-left: 5px solid #8B0000; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1); 
+            transition: all 0.3s ease; 
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        .highlight-item.animate { animation: fadeInUp 0.6s ease forwards; }
+        .highlight-item:hover { 
+            transform: translateY(-5px); 
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15); 
+        }
+        .highlight-item h3 { margin-bottom: 1rem; font-size: 1.2rem; }
+        .about-section:nth-child(odd) .highlight-item { border-left-color: #003087; }
+
+        /* ===== EDUCATION TIMELINE ===== */
+        #education h2.quote { color: #003087; }
+        .timeline-container { 
+            position: relative; 
+            max-width: 900px; 
+            margin: 0 auto; 
+            padding: 2rem 0; 
+        }
+        .timeline { position: relative; padding-left: 2rem; }
+        .timeline::before { 
+            content: ''; 
+            position: absolute; 
+            left: 10px; 
+            top: 0; 
+            bottom: 0; 
+            width: 2px; 
+            background: linear-gradient(to bottom, #8B0000, #003087); 
+        }
+        .timeline-item { 
+            position: relative; 
+            margin: 2.5rem 0; 
+            background: #FFFFFF; 
+            padding: 2rem; 
+            border-radius: 12px; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1); 
+            transition: all 0.3s ease; 
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        .timeline-item.animate { animation: fadeInUp 0.6s ease forwards; }
+        .timeline-item:hover { 
+            transform: translateX(10px); 
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15); 
+        }
+        .timeline-item::before { 
+            content: ''; 
+            position: absolute; 
+            left: -42px; 
+            top: 25px; 
+            width: 20px; 
+            height: 20px; 
+            background: linear-gradient(45deg, #8B0000, #003087); 
+            border-radius: 50%; 
+            border: 3px solid #FFFFFF; 
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2); 
+            z-index: 1;
+        }
+        .timeline-item::after { 
+            content: ''; 
+            position: absolute; 
+            left: -32px; 
+            top: 45px; 
+            width: 2px; 
+            height: calc(100% - 45px); 
+            background: #E0E7FF; 
+            z-index: 0;
+        }
+        .timeline-item:last-child::after { display: none; }
+        .timeline-item h3 { color: #8B0000; margin-bottom: 0.5rem; font-size: 1.3rem; }
+        .timeline-item .date { color: #003087; font-weight: 600; font-size: 0.9rem; margin-bottom: 1rem; text-transform: uppercase; }
+        .timeline-item p { color: #555555; line-height: 1.6; }
+
+        /* ===== SKILLS SECTION ===== */
+        #skills h2.quote { color: #8B0000; }
+        .skills-grid { 
+            display: grid; 
+            gap: 2rem; 
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+        }
+        .skill-item { 
+            background: #FFFFFF; 
+            padding: 2rem; 
+            border-radius: 12px; 
+            border-left: 5px solid #8B0000; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1); 
+            transition: all 0.3s ease; 
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        .skill-item.animate { animation: fadeInUp 0.6s ease forwards; }
+        .skill-item:hover { transform: translateY(-8px); box-shadow: 0 8px 20px rgba(0,0,0,0.15); }
+        .skill-item h3 { margin-bottom: 1.5rem; font-size: 1.3rem; }
+        .skill-item ul { list-style: none; }
+        .skill-item li { padding: 0.8rem 0; font-size: 1rem; color: #555555; position: relative; padding-left: 2rem; border-bottom: 1px solid #f0f0f0; }
+        .skill-item li:last-child { border-bottom: none; }
+        .skill-item li:before { content: "▸"; color: #8B0000; position: absolute; left: 0; font-weight: bold; font-size: 1.2rem; }
+
+        /* ===== CERTIFICATES & WORKS ===== */
+        #certs h2.quote { color: #003087; }
+        #works h2.quote { color: #8B0000; }
+        .certs-grid, .works-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 2rem; 
+            padding: 1rem 0; 
+            min-height: 200px;
+        }
+        .cert-item, .work-item { 
+            position: relative; 
+            cursor: pointer; 
+            transition: all 0.3s ease; 
+            text-align: center; 
+            background: #FFFFFF; 
+            padding: 1.5rem; 
+            border-radius: 12px; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1); 
+            border-left: 5px solid #8B0000;
+        }
+        .cert-item:hover, .work-item:hover { 
+            transform: translateY(-8px); 
+            box-shadow: 0 12px 25px rgba(0,0,0,0.15), 0 0 20px rgba(139, 0, 0, 0.2);
+        }
+        .cert-item img, .work-item img { 
+            width: 100%; 
+            height: 200px; 
+            object-fit: cover; 
+            border-radius: 8px; 
+            border: 2px solid #8B0000; 
+            transition: transform 0.3s ease;
+        }
+        .cert-item:hover img, .work-item:hover img { transform: scale(1.05); }
+        .cert-desc, .work-desc { margin-top: 1.2rem; font-size: 1rem; color: #555555; font-weight: 500; line-height: 1.5; }
+        .certs-btn-container, .works-btn-container { text-align: center; margin-top: 2rem; }
+        .certs-btn-container button, .works-btn-container button { 
+            background: #8B0000; 
+            color: #FFFFFF; 
+            padding: 0.9rem 2rem; 
+            text-decoration: none; 
+            border-radius: 6px; 
+            font-weight: 700; 
+            border: none; 
+            cursor: pointer; 
+            transition: all 0.3s ease; 
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        .certs-btn-container button:hover, .works-btn-container button:hover { 
+            background: #FFF8E7; 
+            color: #8B0000; 
+            transform: scale(1.05) translateY(-2px); 
+            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+        }
+
+        /* ===== MODAL SYSTEM ===== */
+        .modal { 
+            display: none; 
+            position: fixed; 
+            z-index: 2000; 
+            left: 0; 
+            top: 0; 
+            width: 100%; 
+            height: 100%; 
+            background: rgba(0,0,0,0.7); 
+            overflow-y: auto;
+        }
+        .modal-content { 
+            background: #FFFFFF; 
+            margin: 5% auto; 
+            padding: 2.5rem; 
+            width: 90%; 
+            max-width: 1200px; 
+            border-radius: 12px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3); 
+            max-height: 85vh; 
+            border: 3px solid #8B0000; 
+            overflow-y: auto; 
+            position: relative; 
+            transform: scale(0.8); 
+            transition: transform 0.3s ease;
+        }
+        .modal.show .modal-content { transform: scale(1); }
+        .close { 
+            position: absolute; 
+            right: 25px; 
+            top: 15px; 
+            font-size: 2.5rem; 
+            cursor: pointer; 
+            color: #003087; 
+            transition: all 0.3s ease; 
+            font-weight: bold; 
+            z-index: 10;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+        .close:hover { color: #8B0000; background: rgba(139, 0, 0, 0.1); }
+        .modal h3 { color: #003087; margin-bottom: 1.5rem; font-size: 1.8rem; text-align: center; }
+        .modal-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 2rem; 
+            padding: 1rem 0; 
+        }
+        .modal-cert { 
+            text-align: center; 
+            background: #FFF8E7; 
+            padding: 1.5rem; 
+            border-radius: 10px; 
+            border: 2px solid #8B0000; 
+            transition: transform 0.3s ease; 
+            box-sizing: border-box; 
+            overflow: hidden; 
+            min-height: 320px;
+        }
+        .modal-cert:hover { transform: translateY(-5px); }
+        .modal-cert img { width: 100%; max-height: 160px; object-fit: cover; border-radius: 6px; }
+        .modal-cert p { margin: 1.2rem 0; font-size: 1rem; font-weight: 500; color: #555555; line-height: 1.5; }
+        .modal-cert .btn-red { font-size: 0.85rem; padding: 0.6rem 1.2rem; margin-top: 0.5rem; }
+
+        /* ===== CONTACT SECTION ===== */
+        #contact h2.quote { color: #003087; }
+        .contact { text-align: center; }
+        .contact p { color: #555555; font-size: 1.1rem; margin: 1rem 0; opacity: 0; transform: translateY(30px); }
+        .contact p.animate { animation: fadeInUp 0.6s ease forwards; }
+        .contact a { color: #8B0000; font-weight: 600; transition: color 0.3s ease; }
+        .contact a:hover { color: #003087; }
+
+        /* ===== FOOTER ===== */
+        footer { 
+            background: #003087; 
+            color: #FFFFFF; 
+            text-align: center; 
+            padding: 0.5rem; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            gap: 1.5rem; 
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.1); 
+        }
+        footer .btn-red { margin: 0; font-weight: 600; }
+        footer p { font-size: 0.9rem; color: #FFF8E7; font-weight: 500; }
+        footer a { color: #FFF8E7; font-weight: 600; transition: color 0.3s ease; }
+        footer a:hover { color: #E0E7FF; }
+
+        /* ===== RESPONSIVE DESIGN ===== */
+        @media (max-width: 768px) {
+            .logo-full { display: none; }
+            .logo-short { display: block; font-size: 1.4rem; }
+            .nav-menu { 
+                display: none; 
+                position: absolute; 
+                top: 100%; 
+                left: 0; 
+                width: 100%; 
+                background: #003087; 
+                flex-direction: column; 
+                padding: 1.5rem; 
+                gap: 0.5rem; 
+                z-index: 998; 
+            }
+            .nav-menu.active { display: flex; }
+            .hamburger { display: flex; }
+            .hero { padding: 120px 1rem 40px; }
+            .hero h2 { font-size: 1.8rem; }
+            .hero p { font-size: 1.1rem; }
+            .profile-img { width: 320px; height: 240px; margin: 0 auto 1rem; }
+            section { padding: 3rem 1rem; }
+            .timeline { padding-left: 1rem; }
+            .timeline-item::before { left: -32px; }
+            .timeline-item::after { left: -22px; }
+            .certs-grid, .works-grid, .modal-grid { grid-template-columns: 1fr; gap: 1.5rem; padding: 0.5rem; }
+            .cert-item img, .work-item img, .modal-cert img { height: 160px; }
+            .modal-cert { min-height: 280px; }
+            .modal-content { padding: 2rem; margin: 8% auto; width: 95%; }
+            .btn-red, .btn-blue { padding: 0.8rem 1.5rem; font-size: 0.9rem; }
+            footer { flex-direction: column; gap: 1rem; padding: 1.5rem; }
+            .about-section .highlights { grid-template-columns: 1fr; gap: 1.5rem; }
+            h2 { font-size: 1.8rem; margin-bottom: 1.5rem; }
+            .nav-menu a { font-size: 1rem; padding: 0.8rem 1rem; text-align: center; }
+            .nav-container { gap: 1.5rem; padding: 0.8rem 1rem; }
+        }
+        @media (max-width: 480px) {
+            .logo-short { font-size: 1.2rem; }
+            .hero { padding: 100px 0.8rem 30px; }
+            .profile-img { width: 280px; height: 210px; }
+            h2 { font-size: 1.6rem; }
+            .hero h2 { font-size: 1.6rem; }
+            .hero p { font-size: 1rem; }
+            .modal-cert { min-height: 260px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- ===== NAVIGATION ===== -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="logo logo-full">Vineet Pratap Singh</h1>
+            <h1 class="logo logo-short">Vineet PS</h1>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#summary">Summary</a></li>
+                <li><a href="#expertise">Expertise</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+                <li><a href="#aspirations">Aspirations</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#certs">Certificates</a></li>
+                <li><a href="#works">Works</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== HERO SECTION ===== -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <img src="https://i.ibb.co/xtVRPZRD/vineet.jpg" alt="Vineet Pratap Singh - Professional Headshot" class="profile-img highlight-hover">
+            <h2 class="hero-title highlight-hover quote"><span class="typewriter"></span></h2>
+            <p>Integrating pharmaceutical sciences with cutting-edge technology and cybersecurity expertise to drive healthcare innovation and patient-centered solutions.</p>
+            <a href="#contact" class="btn-blue highlight-hover pulse-hero">Connect With Me</a>
+        </div>
+    </section>
+
+    <!-- ===== PROFESSIONAL SUMMARY ===== -->
+    <section id="summary" class="about-section">
+        <h2 class="quote">Professional Summary</h2>
+        <div class="summary">
+            <p>Bachelor of Pharmacy student with specialized expertise at the intersection of pharmaceutical sciences, software engineering, and cybersecurity. Committed to leveraging computational tools, data analytics, and secure systems to advance drug discovery, healthcare delivery, and patient outcomes through innovative technology solutions.</p>
+        </div>
+        <div class="highlights">
+            <div class="highlight-item">
+                <h3>Strategic Vision</h3>
+                <p>Architecting the convergence of traditional pharmacy with digital health innovation through AI-driven drug discovery, secure healthcare systems architecture, and patient-centric technological solutions that enhance clinical outcomes.</p>
+            </div>
+            <div class="highlight-item">
+                <h3>Data-Driven Excellence</h3>
+                <p>Harnessing advanced analytics, machine learning algorithms, and bioinformatics to optimize pharmaceutical research methodologies, streamline clinical trial processes, and enable precision medicine through data-informed decision-making.</p>
+            </div>
+            <div class="highlight-item">
+                <h3>Security & Compliance</h3>
+                <p>Implementing enterprise-grade cybersecurity frameworks and compliance protocols to safeguard sensitive health information while ensuring adherence to global healthcare regulations and data protection standards.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== TECHNICAL EXPERTISE ===== -->
+    <section id="expertise" class="about-section">
+        <h2 class="quote">Technical Expertise</h2>
+        <div class="summary">
+            <p>Demonstrated proficiency across pharmaceutical sciences, full-stack software engineering, and cybersecurity domains, enabling the development of secure, scalable healthcare technology solutions that meet industry standards.</p>
+        </div>
+        <div class="highlights">
+            <div class="highlight-item">
+                <h3>Software Engineering</h3>
+                <p>Full-stack development expertise utilizing Python, JavaScript frameworks, and modern web technologies. Specialized in creating healthcare web applications, mobile solutions for clinical environments, and API integrations for pharmaceutical systems.</p>
+            </div>
+            <div class="highlight-item">
+                <h3>Pharmaceutical Technology</h3>
+                <p>Advanced computational drug design methodologies, molecular modeling techniques, and pharmaceutical data analytics utilizing bioinformatics tools, cheminformatics platforms, and quantitative structure-activity relationship analysis.</p>
+            </div>
+            <div class="highlight-item">
+                <h3>Cybersecurity Specialization</h3>
+                <p>Certified expertise in ethical hacking, penetration testing, and digital forensics with focused application in healthcare IT infrastructure security, electronic health records protection, and medical device cybersecurity protocols.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ACADEMIC ACHIEVEMENTS ===== -->
+    <section id="achievements" class="about-section">
+        <h2 class="quote">Academic & Professional Achievements</h2>
+        <div class="summary">
+            <p>Recognized for sustained academic excellence and significant technical contributions across pharmaceutical sciences and computer science disciplines, demonstrating consistent high performance and professional development.</p>
+        </div>
+        <div class="highlights">
+            <div class="highlight-item">
+                <h3>Academic Distinction</h3>
+                <p>Achieved exceptional academic performance with 92.4% in Higher Secondary examinations and 87% in Secondary School, establishing a strong foundation for advanced pharmaceutical and technical studies.</p>
+            </div>
+            <div class="highlight-item">
+                <h3>Professional Certifications</h3>
+                <p>Completed comprehensive professional certification portfolio from leading industry platforms including Simplilearn, Google Cloud, and other recognized providers across cybersecurity, software development, and digital technologies.</p>
+            </div>
+            <div class="highlight-item">
+                <h3>Technical Portfolio</h3>
+                <p>Developed and deployed 8+ specialized healthcare and pharmaceutical technology applications including molecular databases, clinical dosage calculators, patient management systems, and research analytics tools.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CAREER ASPIRATIONS ===== -->
+    <section id="aspirations" class="about-section">
+        <h2 class="quote">Career Trajectory & Professional Development</h2>
+        <div class="summary">
+            <p>Strategic career planning focused on establishing leadership at the convergence of pharmacy, healthcare technology, and digital innovation, driving transformative solutions that enhance pharmaceutical research efficiency and patient care delivery.</p>
+        </div>
+        <div class="highlights">
+            <div class="highlight-item">
+                <h3>Immediate Professional Objectives</h3>
+                <p>Secure strategic internship and entry-level positions in pharmaceutical IT, healthcare technology development, and clinical informatics to gain practical industry experience and establish professional networks.</p>
+            </div>
+            <div class="highlight-item">
+                <h3>Advanced Academic Pursuits</h3>
+                <p>Pursue graduate studies in pharmaceutical informatics, health technology management, or computational pharmacology to deepen technical expertise and research capabilities in healthcare innovation.</p>
+            </div>
+            <div class="highlight-item">
+                <h3>Industry Transformation Impact</h3>
+                <p>Develop and implement innovative healthcare technology solutions that optimize patient outcomes, streamline clinical workflows, enhance pharmaceutical research methodologies, and improve healthcare delivery efficiency through advanced digital systems.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== EDUCATION TIMELINE ===== -->
+    <section id="education">
+        <h2 class="quote">Academic Background</h2>
+        <div class="timeline-container">
+            <div class="timeline">
+                <div class="timeline-item highlight-hover">
+                    <h3>Bachelor of Pharmacy (B.Pharm)</h3>
+                    <div class="date">2024 - Present</div>
+                    <p><strong>Dr. A. P. J. Abdul Kalam Technical University, Lucknow</strong><br>Comprehensive pharmaceutical education program focusing on drug formulation science, clinical pharmacology, pharmaceutical technology, and medicinal chemistry. Current academic performance: 8.5/10 GPA.</p>
+                </div>
+                <div class="timeline-item highlight-hover">
+                    <h3>Higher Secondary Certificate - Science Stream</h3>
+                    <div class="date">2024</div>
+                    <p><strong>SBMIC, Raghuvanshpuram</strong><br>Physics, Chemistry, Mathematics, Biology curriculum with exceptional academic achievement. Final examination performance: <strong>92.4%</strong> aggregate, establishing strong foundation for pharmaceutical studies.</p>
+                </div>
+                <div class="timeline-item highlight-hover">
+                    <h3>Secondary School Certificate</h3>
+                    <div class="date">2022</div>
+                    <p><strong>SBMIC, Raghuvanshpuram</strong><br>Comprehensive secondary education with emphasis on science and mathematics fundamentals. Final examination performance: <strong>87%</strong> aggregate, demonstrating consistent academic capability.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SKILLS SECTION ===== -->
+    <section id="skills" class="skills">
+        <h2 class="quote">Technical Competencies</h2>
+        <div class="skills-grid">
+            <div class="skill-item highlight-hover">
+                <h3>Pharmaceutical Sciences</h3>
+                <ul>
+                    <li>Drug Formulation & Development</li>
+                    <li>Clinical Pharmacology & Therapeutics</li>
+                    <li>Medicinal Chemistry & Molecular Design</li>
+                    <li>Pharmaceutical Analytics & Quality Control</li>
+                    <li>Biopharmaceutics & Pharmacokinetics</li>
+                </ul>
+            </div>
+            <div class="skill-item highlight-hover">
+                <h3>Software Engineering</h3>
+                <ul>
+                    <li>Python, JavaScript, HTML5, CSS3</li>
+                    <li>Full-Stack Web Application Development</li>
+                    <li>Android Mobile Application Development</li>
+                    <li>SQL Database Design & Management</li>
+                    <li>Cloud Computing & Deployment</li>
+                </ul>
+            </div>
+            <div class="skill-item highlight-hover">
+                <h3>Cybersecurity</h3>
+                <ul>
+                    <li>Ethical Hacking & Penetration Testing</li>
+                    <li>Network Security Architecture</li>
+                    <li>Vulnerability Assessment & Management</li>
+                    <li>Digital Forensics & Incident Response</li>
+                    <li>Security Compliance & Auditing</li>
+                </ul>
+            </div>
+            <div class="skill-item highlight-hover">
+                <h3>Healthcare Technology</h3>
+                <ul>
+                    <li>Electronic Health Records Integration</li>
+                    <li>Clinical Decision Support Systems</li>
+                    <li>Medical Device Interoperability</li>
+                    <li>Healthcare Data Analytics</li>
+                    <li>Telemedicine Platform Development</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CERTIFICATES SECTION ===== -->
+    <section id="certs" class="certs">
+        <h2 class="quote">Professional Certifications</h2>
+        <p>Comprehensive certification portfolio from leading industry platforms demonstrating technical proficiency and professional commitment across multiple domains.</p>
+        <br>
+        <div class="certs-grid" id="certsGrid"></div>
+        <div class="certs-btn-container">
+            <button class="btn-red highlight-hover" id="certsBtn">View Complete Certification Portfolio</button>
+        </div>
+    </section>
+    
+    <!-- ===== WORKS SECTION ===== -->
+    <section id="works" class="works">
+        <h2 class="quote">Technical Projects & Applications</h2>
+        <p>Curated selection of healthcare technology applications and pharmaceutical research tools developed to address clinical and research challenges.</p>
+        <br>
+        <div class="works-grid" id="worksGrid"></div>
+        <div class="works-btn-container">
+            <button class="btn-red highlight-hover" id="worksBtn">View Complete Project Portfolio</button>
+        </div>
+    </section>
+
+    <!-- ===== MODAL FOR CERTIFICATES ===== -->
+    <div id="allCertsModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="certsClose">&times;</span>
+            <h3>Professional Certification Portfolio (7+ Certifications)</h3>
+            <div class="modal-grid" id="modalCertsGrid"></div>
+        </div>
+    </div>
+
+    <!-- ===== MODAL FOR WORKS ===== -->
+    <div id="allWorksModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="worksClose">&times;</span>
+            <h3>Complete Project Portfolio (8+ Projects)</h3>
+            <div class="modal-grid" id="modalWorksGrid"></div>
+        </div>
+    </div>
+
+    <!-- ===== CONTACT SECTION ===== -->
+    <section id="contact" class="contact">
+        <h2 class="quote">Enquiry & Contact</h2>
+        <p><a href="https://admin.xo.je/contact" class="btn-blue" style="color:white;">Contact & Inquiry Form</a></p>
+        <p><strong>Email:</strong> <a href="mailto:vpts@duck.com">vpts@duck.com</a> | <strong>Telegram:</strong> <a href="https://telegram.me/vptst">@vptst</a> | <strong>ORCID:</strong> <a href="https://orcid.org/0009-0006-8424-0643">0009-0006-8424-0643</a></p>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <a href="https://admin.xo.je/cv.pdf" download class="btn-blue highlight-hover">Download Curriculum Vitae</a>
+        <p>&copy; 2025 Vineet Pratap Singh | ORCID: <a href="https://orcid.org/0009-0006-8424-0643">0009-0006-8424-0643</a> | All Rights Reserved</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // ===== NAVIGATION TOGGLE =====
+            const hamburger = document.querySelector('.hamburger');
+            const navMenu = document.getElementById('navMenu');
+            hamburger.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+                const spans = hamburger.querySelectorAll('span');
+                spans.forEach((span, index) => {
+                    if (navMenu.classList.contains('active')) {
+                        if (index === 0) span.style.transform = 'rotate(45deg) translate(5px, 5px)';
+                        if (index === 1) span.style.opacity = '0';
+                        if (index === 2) span.style.transform = 'rotate(-45deg) translate(7px, -7px)';
+                    } else {
+                        span.style.transform = 'none';
+                        span.style.opacity = '1';
+                    }
+                });
+            });
+
+            // ===== SMOOTH SCROLLING =====
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+                    if (targetSection) {
+                        const offsetTop = targetSection.getBoundingClientRect().top + window.pageYOffset - 80;
+                        window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+                    }
+                    navMenu.classList.remove('active');
+                    hamburger.querySelectorAll('span').forEach(span => {
+                        span.style.transform = 'none';
+                        span.style.opacity = '1';
+                    });
+                });
+            });
+
+            // ===== NAVIGATION HIGHLIGHT =====
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-menu a');
+            const observerOptions = { threshold: 0.5, rootMargin: '-10% 0px -80% 0px' };
+            const navObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const activeLink = document.querySelector(`a[href="#${entry.target.id}"]`);
+                        if (activeLink) {
+                            navLinks.forEach(link => link.classList.remove('active'));
+                            activeLink.classList.add('active');
+                        }
+                    }
+                });
+            }, observerOptions);
+            sections.forEach(section => navObserver.observe(section));
+
+            // ===== SCROLL ANIMATIONS =====
+            const scrollObserver = new IntersectionObserver((entries) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.remove('animate');
+                        setTimeout(() => entry.target.classList.add('animate'), index * 150);
+                    } else {
+                        entry.target.classList.remove('animate');
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+            document.querySelectorAll('.timeline-item, .skill-item, .profile-img, .hero h2, .hero p, .contact p, section h2, .highlight-item').forEach(el => scrollObserver.observe(el));
+
+            // ===== TYPEWRITER EFFECT =====
+            const typewriterEl = document.querySelector('.typewriter');
+            const words = ['Pharmacy Professional', 'Healthcare Technologist', 'Cybersecurity Specialist'];
+            let wordIndex = 0, charIndex = 0, isDeleting = false, typeSpeed = 60, deleteSpeed = 40, pauseTime = 2500;
+            function type() {
+                const currentWord = words[wordIndex];
+                if (isDeleting) {
+                    typewriterEl.textContent = currentWord.substring(0, charIndex - 1);
+                    charIndex--;
+                    typeSpeed = deleteSpeed;
+                } else {
+                    typewriterEl.textContent = currentWord.substring(0, charIndex + 1);
+                    charIndex++;
+                    typeSpeed = typeSpeed;
+                }
+                if (!isDeleting && charIndex === currentWord.length) {
+                    setTimeout(() => { isDeleting = true; }, pauseTime);
+                } else if (isDeleting && charIndex === 0) {
+                    isDeleting = false;
+                    wordIndex = (wordIndex + 1) % words.length;
+                }
+                setTimeout(type, typeSpeed);
+            }
+            type();
+
+            // ===== CERTIFICATES DATA =====
+            const certificates = [
+                {img: 'https://i.ibb.co/cKP2ZhbM/cert1.png', desc: 'Introduction to CyberSecurity - Simplilearn, 2025', verifyLink: 'https://simpli-web.app.link/e/XGxxzwSL5Vb'},
+                {img: 'https://i.ibb.co/39Ckj3k8/cert3.png', desc: 'Introduction to Computer Networking - Simplilearn, 2025', verifyLink: 'https://simpli-web.app.link/e/hGdQswzsaWb'},
+                {img: 'https://i.ibb.co/F4G6nzQZ/cert6.png', desc: 'Introduction to Java Programming - Simplilearn, 2025', verifyLink: 'https://simpli-web.app.link/e/b4EnOZHsaWb'},
+                {img: 'https://i.ibb.co/DHDTZTgf/cert8.png', desc: 'Search Engine Optimization Fundamentals - Simplilearn, 2025', verifyLink: 'https://simpli-web.app.link/e/N802ehHeaWb'},
+                {img: 'https://i.ibb.co/nMKqPyr7/cert2.png.png', desc: 'Graphic Design Fundamentals - Canva for Professionals, 2025', verifyLink: 'https://simpli-web.app.link/e/1ZMWOCrS5Vb'},
+                {img: 'https://i.ibb.co/LdZkyLhG/cert4.png', desc: 'Web Development Fundamentals - HTML/CSS - Simplilearn, 2025', verifyLink: 'https://simpli-web.app.link/e/5MRFlE4N5Vb'},
+                {img: 'https://i.ibb.co/GXCz3zs/cert5.png', desc: 'Digital Marketing Strategy - Video & Content Marketing, 2025', verifyLink: 'https://simpli-web.app.link/e/kjZvW94RaWb'},
+                {img: 'https://i.ibb.co/x8jNFHh3/cert7.png', desc: 'Content Management Systems - WordPress Development, 2025', verifyLink: 'https://simpli-web.app.link/e/6LPJqpTQ5Vb'},
+            ];
+            const certsGrid = document.getElementById('certsGrid');
+            certificates.slice(0, 4).forEach((cert, index) => {
+                const div = document.createElement('div');
+                div.className = 'cert-item highlight-hover';
+                div.innerHTML = `<img src="${cert.img}" alt="Professional Certification ${index+1}" onclick="openAllCertsModal()" loading="lazy"><div class="cert-desc">${cert.desc}</div>`;
+                certsGrid.appendChild(div);
+            });
+
+            // ===== WORKS DATA =====
+            const works = [
+                {img: 'https://i.ibb.co/rKMJJcbm/work1.png', desc: 'Multi-Disciplinary Molecular Research Database', link: 'https://md.xo.je'},
+                {img: 'https://i.ibb.co/1fWPzcCZ/work2.png', desc: 'Professional Resume & CV Generation System', link: 'https://admin.xo.je/shared/tools/re-gt.html'},
+                {img: 'https://i.ibb.co/sdLVGddJ/work3.png', desc: 'Chemical Concentration & Solution Calculator', link: 'https://admin.xo.je/shared/tools/chem-conc.html'},
+                {img: 'https://i.ibb.co/7xztkNbQ/work4.png', desc: 'Clinical BMI Assessment & Analysis Tool', link: 'https://admin.xo.je/shared/tools/bmi.html'},
+                {img: 'https://i.ibb.co/zTxJntvS/work5.png', desc: 'Secure Document Management & Viewing System', link: 'https://admin.xo.je/shared/tools/doc-viewer.html'},
+                {img: 'https://i.ibb.co/Txx7GwCm/work6.png', desc: 'Pharmaceutical Dosage Calculation Application', link: 'https://admin.xo.je/shared/tools/dose-calc.html'},
+                {img: 'https://i.ibb.co/qY20YP9Y/work7.png', desc: 'Clinical Patient Case Summary Generator', link: 'https://admin.xo.je/shared/tools/pcsg.html'},
+                {img: 'https://i.ibb.co/KpfQsw1t/work8.png', desc: 'Scientific Prefix & Unit Conversion Calculator', link: 'https://admin.xo.je/shared/tools/sci-precalc.html'},
+                {img: 'https://i.ibb.co/GQnMFLhr/work9.png', desc: 'Universal Unit Conversion & Measurement System', link: 'https://admin.xo.je/shared/tools/uni-con.html'},
+            ];
+            const worksGrid = document.getElementById('worksGrid');
+            works.slice(0, 4).forEach((work, index) => {
+                const div = document.createElement('div');
+                div.className = 'work-item highlight-hover';
+                div.innerHTML = `<img src="${work.img}" alt="Technical Project ${index+1}" onclick="openAllWorksModal()" loading="lazy"><div class="work-desc">${work.desc}</div>`;
+                worksGrid.appendChild(div);
+            });
+
+            // ===== MODAL FUNCTIONS =====
+            function openAllCertsModal() {
+                const modal = document.getElementById('allCertsModal');
+                const modalGrid = document.getElementById('modalCertsGrid');
+                modalGrid.innerHTML = '';
+                certificates.forEach((cert, index) => {
+                    const div = document.createElement('div');
+                    div.className = 'modal-cert highlight-hover';
+                    div.innerHTML = `<img src="${cert.img}" alt="Certification ${index+1}" loading="lazy"><p>${cert.desc}</p><a href="${cert.verifyLink}" target="_blank" class="btn-red">Verify Credential</a>`;
+                    modalGrid.appendChild(div);
+                });
+                modal.classList.add('show');
+                modal.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+            }
+            function closeAllCertsModal() {
+                const modal = document.getElementById('allCertsModal');
+                modal.classList.remove('show');
+                setTimeout(() => { modal.style.display = 'none'; document.body.style.overflow = 'auto'; }, 300);
+            }
+            function openAllWorksModal() {
+                const modal = document.getElementById('allWorksModal');
+                const modalGrid = document.getElementById('modalWorksGrid');
+                modalGrid.innerHTML = '';
+                works.forEach((work, index) => {
+                    const div = document.createElement('div');
+                    div.className = 'modal-cert highlight-hover';
+                    div.innerHTML = `<img src="${work.img}" alt="Project ${index+1}" loading="lazy"><p>${work.desc}</p><a href="${work.link}" target="_blank" class="btn-red">View Application</a>`;
+                    modalGrid.appendChild(div);
+                });
+                modal.classList.add('show');
+                modal.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+            }
+            function closeAllWorksModal() {
+                const modal = document.getElementById('allWorksModal');
+                modal.classList.remove('show');
+                setTimeout(() => { modal.style.display = 'none'; document.body.style.overflow = 'auto'; }, 300);
+            }
+
+            // ===== EVENT LISTENERS =====
+            document.getElementById('certsBtn').addEventListener('click', openAllCertsModal);
+            document.getElementById('worksBtn').addEventListener('click', openAllWorksModal);
+            document.getElementById('certsClose').addEventListener('click', closeAllCertsModal);
+            document.getElementById('worksClose').addEventListener('click', closeAllWorksModal);
+            document.getElementById('allCertsModal').addEventListener('click', function(e) { if (e.target === this) closeAllCertsModal(); });
+            document.getElementById('allWorksModal').addEventListener('click', function(e) { if (e.target === this) closeAllWorksModal(); });
+            document.addEventListener('keydown', function(e) { if (e.key === 'Escape') { closeAllCertsModal(); closeAllWorksModal(); } });
+
+            // ===== INITIAL STATE =====
+            document.querySelector('a[href="#home"]').classList.add('active');
+        });
+    </script>
+</body>
+</html>
